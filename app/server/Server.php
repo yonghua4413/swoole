@@ -38,7 +38,7 @@ class Server {
         }
         foreach ($server->connections as $fd) {
             if ($server->isEstablished($fd) && $fd != $frame->fd) {
-                $server->push($fd, $this->message_format('text', $fd, $data['message']));
+                $server->push($fd, $this->message_format('text', $frame->fd, $data['message']));
             }
         }
     }
